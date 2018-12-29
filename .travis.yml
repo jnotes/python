@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- '8'
+before_script:
+- npm install -g gitbook-cli
+script:
+- gitbook install
+- gitbook build
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: "$GITHUB_TOKEN"
+  local_dir: _book
+  on:
+    branch: master
+env:
+  global:
+    secure: OLVdfyArTmWI/OUMAjZaiV1FgtnxyCMuS57DOFcJLkVrkitXh4Nbm2CHmA/eHmfcIh7bAtxIjduew2xyQ121VFHUMpwhtRAtDW/T5YiFkSWSeI9SBOk7/XJdFUmIKfvCjRtueJmtai7YCzHKZK6fBOQc4dXkcC99UWHEhlwZEPI2WU8Gat3hwAKBXEdyi68MbHisRuMlkYD52YQwjN5y79wkpY93831wDZ6G0lC0XIDMZdbWyUzbdQCzvCJc+pYvs74EQImDenW5h0GOdA2IyoMcDsNSlqHtAtJCeAtjI7zfcjJuz4B3Xp1hsMgUXGsvvQ/Oeb5Epl0EM7HcRJv4Ds1u9UikxsL+tnZZ+XDxUUNDbIJmFFKTZRB9Cy71Aorx9+REprYNTAHCycYYLbpiRk4yYbFZnrBkAY55NNy8QPvSLLjK4wr4lBRucsz6gwyTgshlBVK2H5+gSDlYD/kAII7QwoHvWaM6JfxdBNr11a+o16l8vkZzecP9GVCYl+h4bc60ox0DnMeqI9a29i8mfXmmhVoR0T6hob/C8XG2ShjQ2N/Vay9wxFJWJFKhsT2T7rMOfdxXkq9FHYub0QIG5Ihj1T4rm2hHkl01tVmYj37BwuW1dxdIRqst7V8gBGUuvTCk8TmDJsKBi+cr3KFuwdoMSy0nY/58CCUa+iZaTVM=
